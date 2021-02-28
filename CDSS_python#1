@@ -1,0 +1,6 @@
+#first test Python program
+
+load.math
+a=pi()
+b=25*(a/4-1)
+print (b)
