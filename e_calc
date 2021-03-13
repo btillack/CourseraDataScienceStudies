@@ -1,0 +1,38 @@
+
+import math
+begin=1
+#instead of running and inputting n-number of steps
+#the program will run for 5 specified values
+nn=[5,10,100,1000,10000]
+#Internet E - e taken from the internet as a reference value
+ee=2.71828182845904523536028747135266249775724709369995
+# n= input ("number of steps e: ")
+# n=int(n)
+c=input("precision (places after the coma): ")
+c=int(c)
+#Header of teh table of results
+print("=======================================")
+print(" n        e1           e2          ee")
+print ("======================================")
+for n in nn:
+# e as a result of (1+1/n)^n
+    e1=(1+1/n)**n
+#e as a sum of the reciprocals of all consecutive factorials
+    count = 0
+    e2=0
+    while count < n+1:
+        e2=e2+1/math.factorial(count)
+        count+=1
+#cutting the numbers to the required decimal places
+    e1=int(e1*10**c)
+    e1=e1/(10**c)
+    e2=int(e2*10**c)
+    e2=e2/(10**c)
+    ee=int(ee*10**c)
+    ee=ee/(10**c)
+#output of the results
+#print ("Calculted as (1+1/n)^n : "); print(e1)
+#print ("Calculated as a sum of reciprocals of factorials :"); print( e2)
+#print ("Internet e : "); print( ee)
+    print (n,e1,e2,ee)
+    print("======================================")
